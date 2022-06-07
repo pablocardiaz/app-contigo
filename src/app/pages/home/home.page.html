@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-toolbar class="contigo">
+
+    <ion-buttons slot="start">
+      <ion-button color="light" routerLink="/login">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-button color="light" routerLink="/usuario">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Bienvenido</ion-title>
+
+  </ion-toolbar>
+  <ion-img src="./assets/images/banner.png"></ion-img>
+</ion-header>
+
+<ion-content>
+  <div id="center">
+    <img src="assets/images/logo.png">
+  </div>
+
+   
+  <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
+    <ion-icon slot="start" name="person"></ion-icon>
+    <ion-label>
+      Perfil 1
+    </ion-label>
+  </ion-item>
+
+  <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
+    <ion-icon slot="start" name="person"></ion-icon>
+    <ion-label>
+      Perfil 2
+    </ion-label>
+  </ion-item>
+
+  <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
+    <ion-icon slot="start" name="person"></ion-icon>
+    <ion-label>
+      Perfil 3
+    </ion-label>
+  </ion-item>
+  
+  
+
+
+</ion-content>

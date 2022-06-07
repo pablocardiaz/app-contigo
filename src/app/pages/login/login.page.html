@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="contigo">
+    <ion-title>Login</ion-title>
+      </ion-toolbar> 
+      <ion-img src="./assets/images/banner.png"></ion-img> 
+</ion-header>
+
+<ion-content>
+<div id="center">
+  <img src="assets/images/logo.png">
+</div>
+    
+  <ion-item id="form">    
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input [(ngModel)]="modeloUsuario"></ion-input>
+  </ion-item>
+
+  <ion-item id="form">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="modeloContrasena"></ion-input>
+  </ion-item>
+
+  <ion-button routerLink="/home" class="ion-margin-top contigo" expand="block">INGRESAR</ion-button>
+
+  <div id="center">
+  <ion-item class="ion-margin-top">
+  <ion-checkbox class="contigo"></ion-checkbox>
+  <ion-label>Recuerdame</ion-label>
+</ion-item>
+</div>
+  
+</ion-content>
