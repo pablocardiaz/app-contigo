@@ -29,16 +29,19 @@
   <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
     <ion-icon slot="start" name="person"></ion-icon>
     <ion-label>
-      Perfil 1
+      juanito <!-- = rut => desglosar por el rut => consulta con la info-->
     </ion-label>
   </ion-item>
 
   <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
     <ion-icon slot="start" name="person"></ion-icon>
     <ion-label>
-      Perfil 2
+      rosa = rut
     </ion-label>
   </ion-item>
+  <!--Para agregar un nuevo perfil debe darle al boton agregar e ingresa el rut del niño , luego se hace una busqueda interna y 
+    si cumple el rut del hijo que pertenece al papá se agrega un nuevo perfil con el nombre del niño, se creara 10 perfiles que estaran ocultos y se habilitaran segun 
+  el match que se haga en el buscador con el  rut , si se encuentra se habilita el nuevo perfil -->
 
   <ion-item class="ion-margin-top" button (click)="buttonClick()" detail>
     <ion-icon slot="start" name="person"></ion-icon>
