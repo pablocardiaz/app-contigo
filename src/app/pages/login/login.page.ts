@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { AlertController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,17 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  modeloUsuario: string= '';
-  modeloContrasena: string='';
+  rut: string= '';
+  contrasena: string='';
 
-  constructor() { }
+  constructor(private alertController: AlertController,
+    private api: ApiService,
+    private toastController: ToastController,
+    private router: Router) { }
 
   ngOnInit() {
+    localStorage.clear();
+  }
+  async mostrarRespuesta(mensaje) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 3000
+    });
+    toast.present();
+  }
+  /* aca necesito que me enseñe el paso a paso y como entenderlo para poder replicarlo se que va esto hace la validacion del login*/
+  login() {
+    this.api.login(this.rut, this.contrasena).subscribe((data: any) => {
+      console.log(data)
+      if (data.resultado && data.resultado.status === 200) {
+        localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
+        this.router.navigate(['home'], { replaceUrl: true });
+      } else {
+        this.mostrarRespuesta("Credenciales incorrectas");
+      }
+    })
   }
 
-  validarCredenciales(){
-    console.log(this.modeloUsuario);
-    console.log(this.modeloContrasena);
+  navegar() {
+    this.router.navigate(['contrasena']);
   }
 
 }
