@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>restablecer</ion-title>
+
+  <ion-toolbar class="contigo">
+
+    <ion-buttons slot="start">
+      <ion-button color="light" routerLink="/login">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+      <ion-title>Recuperar Contraseña</ion-title>
+
   </ion-toolbar>
+  <ion-img src="./assets/images/banner.png"></ion-img>
 </ion-header>
 
 <ion-content>
+
+  <ion-item id="form">    
+    <ion-label position="floating">Ingrese correo electrónico</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+  <!-- validar correo electronico de usuario-->
+
+  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+     Enviar <ion-icon name="mail" class="ion-margin-start" ></ion-icon>
+    </ion-button>
+  <!-- alerta de correo invalido o correo enviado-->
 
 </ion-content>

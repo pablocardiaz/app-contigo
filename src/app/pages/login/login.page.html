@@ -21,14 +21,13 @@
   </ion-item>
 
   <ion-button expand="block" class="ion-margin contigo" (click)="login()">
-    <ion-icon name="rocket-outline"></ion-icon> Ingresar
-  </ion-button>
+      Ingresar 
+      <ion-icon name="finger-print" class="ion-margin-start"></ion-icon>
+    </ion-button>
 
-  <div id="center">
-  <ion-item class="ion-margin-top">
-  <ion-checkbox class="contigo"></ion-checkbox>
-  <ion-label>Recuerdame</ion-label>
-</ion-item>
-</div>
+  <ion-button expand="block" class="ion-margin contigo" routerLink="/restablecer">
+     Recuperar Contraseña 
+     <ion-icon name="keypad" class="ion-margin-start"></ion-icon>
+    </ion-button>
   
 </ion-content>

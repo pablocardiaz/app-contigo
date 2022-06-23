@@ -4,7 +4,7 @@
 
     <ion-buttons slot="start">
       <ion-button color="light" (click)="logout()">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        <ion-icon slot="icon-only" name="exit-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
     
@@ -29,7 +29,7 @@
   <ion-item class="ion-margin-top" *ngFor="let hijo of hijos" button (click)="goProfile(hijo)" detail>
     <ion-icon slot="start" name="person"></ion-icon>
     <ion-label>
-      {{hijo.nombre}} {{hijo.rut}} <!-- = rut => desglosar por el rut => consulta con la info-->
+      {{hijo.nombre}} <!-- {{hijo.rut}}  = rut => desglosar por el rut => consulta con la info-->
     </ion-label>
   </ion-item>
   <!--Para agregar un nuevo perfil debe darle al boton agregar e ingresa el rut del niño , luego se hace una busqueda interna y 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HijosService } from 'src/app/services/hijos.service';
+
 
 @Component({
   selector: 'app-perfil',

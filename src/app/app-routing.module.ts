@@ -40,7 +40,19 @@ const routes: Routes = [
   {
     path: 'restablecer',
     loadChildren: () => import('./pages/restablecer/restablecer.module').then( m => m.RestablecerPageModule)
+  },  {
+    path: 'cambio-correo',
+    loadChildren: () => import('./pages/cambio-correo/cambio-correo.module').then( m => m.CambioCorreoPageModule)
   },
+  {
+    path: 'cambio-celular',
+    loadChildren: () => import('./pages/cambio-celular/cambio-celular.module').then( m => m.CambioCelularPageModule)
+  },
+  {
+    path: 'cambio-contrasena',
+    loadChildren: () => import('./pages/cambio-contrasena/cambio-contrasena.module').then( m => m.CambioContrasenaPageModule)
+  },
+
 ];
 
 @NgModule({
