@@ -1,9 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>cambioContrasena</ion-title>
+
+  <ion-toolbar class="contigo">
+
+    <ion-buttons slot="start">
+      <ion-button color="light" routerLink="/usuario">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+      <ion-title></ion-title>
+
   </ion-toolbar>
+  <ion-img src="./assets/images/banner.png"></ion-img>
 </ion-header>
 
 <ion-content>
+
+  <ion-item>    
+    <ion-label position="floating">Ingresar Contraseña</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+
+  <ion-item>    
+    <ion-label position="floating">Ingresar Nueva Contraseña</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+
+  <ion-item>    
+    <ion-label position="floating">Confirmar Nueva Contraseña</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+    Enviar <ion-icon name="finger-print-outline" class="ion-margin-start" ></ion-icon>
+   </ion-button>
+ <!-- validar contraseña actual y verificar que ambas contraseñas nuevas coincidan-->
 
 </ion-content>
