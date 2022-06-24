@@ -16,12 +16,40 @@
 
 
 <ion-content>
-  <ion-content [fullscreen]="true" class="ion-padding">
-    <h4>Seleccione una especialidad Medica</h4>
-    <ion-button color="tertiary"fill="clear" expand="full" (click)="especialidadMedica()"><ion-icon name="create"></ion-icon>  Especialidades</ion-button>  <code>{{selectedData | json }}</code>
+  
+  <ion-item>
+    <ion-label>Especialidad Medica</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
+      <ion-select-option value="brown">Medicina General</ion-select-option>
+      <ion-select-option value="blonde">Radiologia</ion-select-option>
+      <ion-select-option value="red">Odontologia</ion-select-option>
+      <ion-select-option value="red">Cardiologia</ion-select-option>
+      <ion-select-option value="red">Psicologo</ion-select-option>      
+    </ion-select>
+  </ion-item>
+
+  <p></p>
+  <ion-item>
+    <ion-label>Medicos</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
+      <ion-select-option value="brown">Sebastián Obando</ion-select-option>
+      <ion-select-option value="blonde">Manuel Ciro</ion-select-option>
+      <ion-select-option value="red">Deiby Rayo</ion-select-option>
+      </ion-select>
+      </ion-item>
   <p></p>
 
-  
+  <ion-item>
+    <ion-label>Selecione el paciente</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
+      <ion-select-option value="brown">Sebastián Obando</ion-select-option>
+      <ion-select-option value="blonde">Manuel Ciro</ion-select-option>
+      <ion-select-option value="red">Deiby Rayo</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <p></p>
+
    <center><ion-datetime></ion-datetime></center>
+
 
 </ion-content>
