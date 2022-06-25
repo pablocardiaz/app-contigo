@@ -18,15 +18,15 @@
 
   <ion-item>    
     <ion-label position="floating">Ingresar Nuevo Celular</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="celular"></ion-input>
   </ion-item>
 
   <ion-item>    
     <ion-label position="floating">Confirmar Nuevo Celular</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="nuevoCelular"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+  <ion-button expand="block" class="ion-margin contigo" (click)="ModificarCelular()">
     Enviar <ion-icon name="keypad-outline" class="ion-margin-start" ></ion-icon>
    </ion-button>
  <!-- validar que ambos numeros coincidan-->

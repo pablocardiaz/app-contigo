@@ -33,11 +33,14 @@ export class CambioContrasenaPage implements OnInit {
     toast.present();
   }
 
-  modificarContrasena() {
-    this.api.modificarContrasena(this.rut, this.contrasena, this.nuevaContrasena).subscribe((data: any) => {
+  ModificarContrasena() {
+    this.api.ModificarContrasena(this.rut, this.contrasena, this.nuevaContrasena).subscribe((data: any) => {
       console.log(data)
       if (data.resultado  === 'CAMBIO_CONTRASEÑA_OK') {
         localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
+      } else {
+        this.mostrarRespuesta("Datos ingresados");
+        
       }
     })
   }

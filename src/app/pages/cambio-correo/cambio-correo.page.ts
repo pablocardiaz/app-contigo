@@ -30,10 +30,10 @@ export class CambioCorreoPage implements OnInit {
       toast.present();
     }
   
-    modificarCorreo() {
-      this.api.modificarCorreo(this.email, this.nuevoEmail).subscribe((data: any) => {
+    ModificarCorreo() {
+      this.api.ModificarCorreo(this.email, this.nuevoEmail).subscribe((data: any) => {
         console.log(data)
-        if (data.resultado  === 'CAMBIO_CONTRASEÑA_OK') {
+        if (data.resultado  === 'CAMBIO_CORREO_OK') {
           localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
         } else {
           this.mostrarRespuesta("Credenciales incorrectas");
