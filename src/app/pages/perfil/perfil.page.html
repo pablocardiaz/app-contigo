@@ -16,11 +16,9 @@
 
 <ion-content>
 
-  <ion-item  details="">
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
+  <ion-item >
     <ion-label>
+      <ion-icon name="people"></ion-icon>
       {{datoshijos.nombre}} 
       <!-- caputar nombre de hijo--> 
     </ion-label>
@@ -29,22 +27,22 @@
 <ion-list>
 
   <ion-item>
-    <ion-label>Genero</ion-label>
+    <ion-label>Género</ion-label>
     <ion-note slot="end">{{datoshijos.sexo}}</ion-note>
   </ion-item>
 
   <ion-item>
-    <ion-label>Alergico</ion-label>
+    <ion-label>Alérgico</ion-label>
     <ion-note slot="end">{{datoshijos.alergico}} </ion-note>
   </ion-item>
 <!-- caputar dato requerido -->
   <ion-item>
-    <ion-label>Diagnostico</ion-label>
+    <ion-label>Diagnóstico</ion-label>
     <ion-note slot="end">{{datoshijos.diagnostico}}</ion-note>
   </ion-item>
 
   <ion-item>
-    <ion-label>Fecha control medico</ion-label>
+    <ion-label>Último control medico</ion-label>
     <ion-note slot="end">{{datoshijos.fecha_cita}}</ion-note>
   </ion-item>
 
