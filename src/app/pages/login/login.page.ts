@@ -29,7 +29,6 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
-  /* aca necesito que me enseñe el paso a paso y como entenderlo para poder replicarlo se que va esto hace la validacion del login*/
   login() {
     this.api.login(this.rut, this.contrasena).subscribe((data: any) => {
       console.log(data)

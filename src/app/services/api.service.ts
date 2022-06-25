@@ -11,7 +11,7 @@ export class ApiService {
   rutaBase: string = 'https://desarrollos.cl/app-contigo/api/api.service.php';
 
   constructor(private http: HttpClient) { }
-/*acá tambien necesito entender y que me guie como hacerlo ya que esto es un codigo reciclado de otro trabajo de universidad en la cual no me toco hacer*/
+
   //login(usuario, contrasena) {
    // return this.http.get(this.rutaBase + '?nombreFuncion=UsuarioLogin&usuario=' + usuario + "&contrasena=" + contrasena);
   //}
@@ -36,7 +36,9 @@ export class ApiService {
     return this.http.put(this.rutaBase, { nombreFuncion: "ModificarCelular",  celular: celular, nuevoCelular: nuevoCelular });
   }
 
-  
+  ObtenerDatosPadres (rut_padre){
+    return this.http.get(this.rutaBase,{ params:{ nombreFuncion: "OBTENER_DATOS_PADRES",rut_padre}})
+  }
 
   
   

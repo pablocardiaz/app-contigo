@@ -23,7 +23,7 @@
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>
     <ion-label>
-      Nombre
+      Nombre {{datos_padre.nombre}}
       <!-- caputar nombre usuario--> 
     </ion-label>
   </ion-item>
@@ -32,12 +32,12 @@
 
         <ion-item>
           <ion-label>Celular</ion-label>
-          <ion-note slot="end">999999999</ion-note>
+          <ion-note slot="end">{{datos_padre.movil}}</ion-note>
         </ion-item>
 
         <ion-item>
           <ion-label >e-mail</ion-label>
-          <ion-note slot="end">xxx@xxx</ion-note>
+          <ion-note slot="end">{{datos_padre.correo}}</ion-note>
         </ion-item>
 
       </ion-list>
