@@ -18,15 +18,15 @@
 
   <ion-item>    
     <ion-label position="floating">Ingresar Nuevo Correo electrónico</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="email"></ion-input>
   </ion-item>
 
   <ion-item>    
     <ion-label position="floating">Confirmar Nuevo Correo electrónico</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="nuevoEmail"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+  <ion-button expand="block" class="ion-margin contigo" (click)="modificarCorreo()">
     Enviar <ion-icon name="mail-outline" class="ion-margin-start" ></ion-icon>
    </ion-button>
  <!-- validar que ambos correos coincidan-->

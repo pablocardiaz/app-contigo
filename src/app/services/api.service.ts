@@ -28,8 +28,8 @@ export class ApiService {
     return this.http.put(this.rutaBase, { nombreFuncion: "ModificarContrasena", rut: rut, contrasenas: contrasena, nuevaContrasenas: nuevaContrasena });
   }
 
-  modificarCorreo(email) {
-    return this.http.put(this.rutaBase, { nombreFuncion: "ModificarCorreo", parametros: { email: email } });
+  modificarCorreo(email, nuevoEmail) {
+    return this.http.put(this.rutaBase, { nombreFuncion: "ModificarCorreo", parametros: { email: email, nuevoEmail: nuevoEmail} });
   }
 
   

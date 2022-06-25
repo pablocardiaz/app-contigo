@@ -38,8 +38,6 @@ export class CambioContrasenaPage implements OnInit {
       console.log(data)
       if (data.resultado  === 'CAMBIO_CONTRASEÑA_OK') {
         localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
-      } else {
-        this.mostrarRespuesta("Credenciales incorrectas");
       }
     })
   }
