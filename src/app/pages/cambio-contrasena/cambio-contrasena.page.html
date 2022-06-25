@@ -17,21 +17,26 @@
 <ion-content>
 
   <ion-item>    
+    <ion-label position="floating">Ingrese su rut</ion-label>
+    <ion-input [(ngModel)]="rut"></ion-input>
+  </ion-item>
+
+  <ion-item>    
     <ion-label position="floating">Ingresar Contraseña</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="contrasena"></ion-input>
   </ion-item>
 
   <ion-item>    
     <ion-label position="floating">Ingresar Nueva Contraseña</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="nuevaContrasena"></ion-input>
   </ion-item>
 
   <ion-item>    
     <ion-label position="floating">Confirmar Nueva Contraseña</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="nuevaContrasena1"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+  <ion-button expand="block" class="ion-margin contigo" (click)="modificarContrasena()"   >  
     Enviar <ion-icon name="finger-print-outline" class="ion-margin-start" ></ion-icon>
    </ion-button>
  <!-- validar contraseña actual y verificar que ambas contraseñas nuevas coincidan-->

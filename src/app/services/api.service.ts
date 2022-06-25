@@ -20,9 +20,19 @@ export class ApiService {
     return this.http.post(this.rutaBase, { nombreFuncion: "Validacion_login", rut: rut, contrasenas: contrasena });
   }
 
-  modificarContrasena(usuario, contrasena) {
-    return this.http.put(this.rutaBase, { nombreFuncion: "UsuarioModificarContrasena", parametros: { usuario: usuario, contrasena: contrasena } });
+  sendMail(email) {
+    return this.http.post(this.rutaBase, { nombreFuncion: "Validacion_mail", email: email });
   }
+
+  modificarContrasena(rut, contrasena, nuevaContrasena) {
+    return this.http.put(this.rutaBase, { nombreFuncion: "ModificarContrasena", rut: rut, contrasenas: contrasena, nuevaContrasenas: nuevaContrasena });
+  }
+
+  modificarCorreo(email) {
+    return this.http.put(this.rutaBase, { nombreFuncion: "ModificarCorreo", parametros: { email: email } });
+  }
+
+  
 
   
   

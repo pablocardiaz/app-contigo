@@ -18,11 +18,11 @@
 
   <ion-item>    
     <ion-label position="floating">Ingrese correo electrónico</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="email"></ion-input>
   </ion-item>
   <!-- validar correo electronico de usuario-->
 
-  <ion-button expand="block" class="ion-margin contigo"    >  <!-- (click)="login()"-->
+  <ion-button expand="block" class="ion-margin contigo" (click)="sendMail()">
      Enviar <ion-icon name="mail" class="ion-margin-start" ></ion-icon>
     </ion-button>
   <!-- alerta de correo invalido o correo enviado-->
