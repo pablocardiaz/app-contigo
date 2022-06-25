@@ -16,6 +16,8 @@ export class HijosService {
     return this.http.get(this.rutaBase, { params: { nombreFuncion: 'obtener_hijos', padre_id } })
   }
 
-
+  datosHijos(rut_hijo1){
+    return this.http.get (this.rutaBase,{ params: { nombreFuncion: "datos_hijos", rut_hijo1}});
+  }
 
 }
