@@ -37,9 +37,12 @@ export class ApiService {
   }
 
   ObtenerDatosPadres (rut_padre){
-    return this.http.get(this.rutaBase,{ params:{ nombreFuncion: "OBTENER_DATOS_PADRES",rut_padre}})
+    return this.http.get(this.rutaBase,{ params:{ nombreFuncion: "OBTENER_DATOS_PADRES",rut_padre}});
   }
 
+  AgendaMedicaFiltro (rut_padre){
+    return this.http.get(this.rutaBase,{ params:{ nombreFuncion: "AgendaMedicaFiltro",}})
+  }
   
   
 
