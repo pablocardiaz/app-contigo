@@ -32,14 +32,9 @@
       {{hijo.nombre}} {{hijo.apellido}}  <!-- {{hijo.rut}}  = rut => desglosar por el rut => consulta con la info-->
     </ion-label>
   </ion-item>
-  <!--Para agregar un nuevo perfil debe darle al boton agregar e ingresa el rut del niño , luego se hace una busqueda interna y 
-    si cumple el rut del hijo que pertenece al papá se agrega un nuevo perfil con el nombre del niño, se creara 10 perfiles que estaran ocultos y se habilitaran segun 
-  el match que se haga en el buscador con el  rut , si se encuentra se habilita el nuevo perfil -->
-
-
+ 
   
   <ion-button routerLink="/agenda" class="ion-margin-top contigo" expand="block">Reserva tu hora <ion-icon slot="start" name="calendar-number"></ion-icon></ion-button>
 
 
-<!--usuario podra agregar a su hijo , se valida a traves de la bbdd que el hijo pertenezca al padre a traves del rut ingresado por la aplicacion de escritorio-->
 </ion-content>
