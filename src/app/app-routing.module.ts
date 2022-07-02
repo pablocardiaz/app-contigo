@@ -52,6 +52,10 @@ const routes: Routes = [
     path: 'cambio-contrasena',
     loadChildren: () => import('./pages/cambio-contrasena/cambio-contrasena.module').then( m => m.CambioContrasenaPageModule)
   },
+  {
+    path: 'ficha-medica',
+    loadChildren: () => import('./pages/ficha-medica/ficha-medica.module').then( m => m.FichaMedicaPageModule)
+  },
 
 ];
 
