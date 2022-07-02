@@ -19,35 +19,39 @@
   <ion-item >
     <ion-label>
       <ion-icon name="people"></ion-icon>
-      {{datoshijos.nombre}} 
+      {{datoshijos.nombre}} {{datoshijos.apellido}} 
       <!-- caputar nombre de hijo--> 
     </ion-label>
   </ion-item>
 
-<ion-list>
+  <ion-list>
 
-  <ion-item>
-    <ion-label>Género</ion-label>
-    <ion-note slot="end">{{datoshijos.sexo}}</ion-note>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Alérgico</ion-label>
-    <ion-note slot="end">{{datoshijos.alergico}} </ion-note>
-  </ion-item>
-<!-- caputar dato requerido -->
-  <ion-item>
-    <ion-label>Diagnóstico</ion-label>
-    <ion-note slot="end">{{datoshijos.diagnostico}}</ion-note>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Último control medico</ion-label>
-    <ion-note slot="end">{{datoshijos.fecha_cita}}</ion-note>
-  </ion-item>
-
-
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-note slot="end">{{datoshijos.sexo}}</ion-note>
+    </ion-item>
   
-</ion-list>
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-note slot="end">{{datoshijos.fecha_nac}} </ion-note>
+    </ion-item>
+  <!-- caputar dato requerido -->
+    <ion-item>
+      <ion-label>Peso</ion-label>
+      <ion-note slot="end">{{datoshijos.peso}} kg</ion-note>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Estatura</ion-label>
+      <ion-note slot="end">{{datoshijos.estatura}} cm</ion-note>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Alergias</ion-label>
+      <ion-note slot="end">{{datoshijos.alergico}} </ion-note>
+    </ion-item>
+  
+    
+  </ion-list>
 
 </ion-content>
