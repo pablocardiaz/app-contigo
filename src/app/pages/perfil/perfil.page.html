@@ -8,8 +8,8 @@
       </ion-button>
     </ion-buttons>
     
-      <ion-title> Ficha Medica </ion-title>
-
+      <ion-title >Información de Hijo/a</ion-title>
+     
   </ion-toolbar>
   <ion-img src="./assets/images/banner.png"></ion-img>
 </ion-header>
@@ -18,7 +18,7 @@
 
   <ion-item >
     <ion-label>
-      <ion-icon name="people"></ion-icon>
+      <ion-icon name="people"> </ion-icon>
       {{datoshijos.nombre}} {{datoshijos.apellido}} 
       <!-- caputar nombre de hijo--> 
     </ion-label>
@@ -51,7 +51,11 @@
       <ion-note slot="end">{{datoshijos.alergico}} </ion-note>
     </ion-item>
   
-    
   </ion-list>
+
+  <ion-button routerLink="/ficha-medica" class="ion-margin-top contigo" expand="block"> <ion-icon name="clipboard"></ion-icon> Ficha Medica </ion-button>
+
+
+
 
 </ion-content>
