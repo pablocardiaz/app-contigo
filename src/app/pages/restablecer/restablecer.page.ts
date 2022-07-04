@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { AlertController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-restablecer',
@@ -16,6 +17,7 @@ export class RestablecerPage implements OnInit {
     private alertController: AlertController,
     private api: ApiService,
     private toastController: ToastController,
+    private httpClient: HttpClient,
     private router: Router) { }
   
     ngOnInit() {
@@ -35,6 +37,7 @@ export class RestablecerPage implements OnInit {
       if (data.resultado && data.resultado.status === 200) {
         localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
         this.router.navigate(['login'], { replaceUrl: true });
+        this.mostrarRespuesta("Contraseña enviada con exito");
       } else {
         this.mostrarRespuesta("Correo electrónico no existe en la base de datos");
       }

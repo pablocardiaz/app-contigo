@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   rutaBase: string = 'https://desarrollos.cl/app-contigo/api/api.service.php';
+  //rutaBase: string = 'http://localhost/contigo/api/api.service.php';
+
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +23,7 @@ export class ApiService {
   }
 
   sendMail(email) {
-    return this.http.post(this.rutaBase, { nombreFuncion: "Validacion_mail", email: email });
+    return this.http.post(this.rutaBase, { nombreFuncion: "Envio_mail_Contrasena", email: email });
   }
 
   ModificarContrasena(rut, contrasena, nuevaContrasena) {
