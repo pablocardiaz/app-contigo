@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
   <script src="js/ionic.popup.select.min.js"></script>
   <ion-toolbar class="contigo">
 
@@ -7,7 +7,7 @@
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    
+
     <ion-title>Agenda Médica</ion-title>
 
   </ion-toolbar>
@@ -16,27 +16,25 @@
 
 
 <ion-content>
-  
+
   <ion-item>
     <ion-label>Especialidad Medica</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
-      <ion-select-option value="brown">Medicina General</ion-select-option>
-      <ion-select-option value="blonde">Radiologia</ion-select-option>
-      <ion-select-option value="red">Odontologia</ion-select-option>
-      <ion-select-option value="red">Cardiologia</ion-select-option>
-      <ion-select-option value="red">Psicologo</ion-select-option>      
+    <ion-select (ionChange)="tipoCitaChange($event)" [(ngModel)]="tipoCita" [interfaceOptions]="customPopoverOptions"
+      interface="popover" placeholder="Seleccione">
+      <ion-select-option *ngFor="let tipoCita of tipoCitas" [value]="tipoCita.id">{{tipoCita.nombre}}
+      </ion-select-option>
     </ion-select>
   </ion-item>
 
   <p></p>
   <ion-item>
     <ion-label>Medicos</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
-      <ion-select-option value="brown">Sebastián Obando</ion-select-option>
-      <ion-select-option value="blonde">Manuel Ciro</ion-select-option>
-      <ion-select-option value="red">Deiby Rayo</ion-select-option>
-      </ion-select>
-      </ion-item>
+    <ion-select (ionChange)="doctorChange($event)" [(ngModel)]="doctor" [interfaceOptions]="customPopoverOptions"
+      interface="popover" placeholder="Seleccione">
+      <ion-select-option *ngFor="let doctor of doctores" [value]="doctor.doctor_id">{{doctor.nombre_completo}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
   <p></p>
 
   <ion-item>
@@ -49,7 +47,15 @@
   </ion-item>
   <p></p>
 
-   <center><ion-datetime></ion-datetime></center>
-
+  <center>{{dia}}
+    <ion-datetime (ionChange)="diaChange($event)" presentation="date" [(ngModel)]="dia"></ion-datetime>
+  </center>
+  <p></p>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item *ngFor="let tramo of tramos">
+      <ion-label>{{tramo.hora_inicio}} -{{tramo.hora_fin}}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
