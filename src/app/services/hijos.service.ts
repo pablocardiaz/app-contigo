@@ -20,4 +20,10 @@ export class HijosService {
     return this.http.get (this.rutaBase,{ params: { nombreFuncion: "datos_hijos", rut_hijo1}});
   }
 
+  fichaMedicaHijos(rut_hijo){
+    return this.http.get (this.rutaBase,{ params: { nombreFuncion: "ObtenerFichaMedicaHijo", rut_hijo}});
+  }
+
+
+
 }
