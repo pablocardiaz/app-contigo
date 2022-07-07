@@ -11,7 +11,8 @@ import { HijosService } from 'src/app/services/hijos.service';
 export class FichaMedicaPage implements OnInit {
 
   ruthijos =[];
-  data =[]
+  data =[];
+  dataresult =[];
 
   constructor(
     private hijosService: HijosService,
@@ -32,7 +33,7 @@ export class FichaMedicaPage implements OnInit {
       
     {
       console.log(response);
-      this.data = response.resultado[0];
+      this.dataresult = response.resultado;
 
     });
 

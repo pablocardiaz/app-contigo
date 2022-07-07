@@ -4,7 +4,7 @@
   <ion-toolbar class="contigo">
 
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="inside"></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
     
       <ion-title >Ficha Medica</ion-title>
@@ -14,6 +14,25 @@
 </ion-header>
 
 <ion-content>
+
+      <ion-accordion-group *ngFor="let ff of dataresult">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Consulta Medica Fecha: {{ff.fecha_cita}}</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content"> 
+              <div> Motivo de Consulta: {{ff.motivo}} </div>  
+              <p></p>
+              <div> Medico: {{ff.Doctor}} </div>  
+              <p></p>
+              <div> Diagnostico: {{ff.des_diagnostico}}  </div>  
+              <p></p>
+              <div> Receta: </div>
+              <div>{{ff.receta}}  </div>  
+          </div>
+          
+        </ion-accordion>
+      </ion-accordion-group>
 
 </ion-content>
 
