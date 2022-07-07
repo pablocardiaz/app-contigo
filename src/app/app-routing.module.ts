@@ -40,7 +40,8 @@ const routes: Routes = [
   {
     path: 'restablecer',
     loadChildren: () => import('./pages/restablecer/restablecer.module').then( m => m.RestablecerPageModule)
-  },  {
+  },
+  {
     path: 'cambio-correo',
     loadChildren: () => import('./pages/cambio-correo/cambio-correo.module').then( m => m.CambioCorreoPageModule)
   },

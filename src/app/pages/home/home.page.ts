@@ -14,7 +14,7 @@ export class HomePage implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit() {
-    console.log('INIT')
+    console.log('Detalle de Hij@s')
     let session: any = localStorage.getItem('SESSION');
     if (!session) {
       this.router.navigate(['login'], { replaceUrl: true });
