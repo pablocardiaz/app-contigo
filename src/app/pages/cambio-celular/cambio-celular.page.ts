@@ -35,8 +35,13 @@ export class CambioCelularPage implements OnInit {
         console.log(data)
         if (data.resultado  === 'CAMBIO_CELULAR_OK') {
           localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
+          this.celular = '';
+          this.nuevoCelular ='';
+          this.mostrarRespuesta("Credenciales incorrectas"); // credenciales correctas
         } else {
-          this.mostrarRespuesta("Credenciales incorrectas");
+          this.mostrarRespuesta("Credenciales correctas"); 
+          this.celular = '';
+          this.nuevoCelular ='';
         }
       })
     }
