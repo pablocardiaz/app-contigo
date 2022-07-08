@@ -37,9 +37,9 @@ export class CambioCelularPage implements OnInit {
           localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
           this.celular = '';
           this.nuevoCelular ='';
-          this.mostrarRespuesta("Credenciales incorrectas"); // credenciales correctas
+          this.mostrarRespuesta("Credenciales correctas");
         } else {
-          this.mostrarRespuesta("Credenciales correctas"); 
+          this.mostrarRespuesta("Credenciales incorrectas"); 
           this.celular = '';
           this.nuevoCelular ='';
         }

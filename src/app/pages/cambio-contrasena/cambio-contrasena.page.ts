@@ -42,9 +42,9 @@ export class CambioContrasenaPage implements OnInit {
         this.contrasena ='';
         this.nuevaContrasena ='';
         this.nuevaContrasena2 ='';
-        this.mostrarRespuesta("Datos ingresados no son correctos"); // credenciales correctas
+        this.mostrarRespuesta("Datos ingresados correctamente"); 
       } else {
-        this.mostrarRespuesta("Datos ingresados correctamente");
+        this.mostrarRespuesta("Datos ingresados no son correctos ");
         this.rut ='';
         this.contrasena ='';
         this.nuevaContrasena ='';
