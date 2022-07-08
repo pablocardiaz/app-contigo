@@ -52,12 +52,15 @@
     <ion-datetime (ionChange)="diaChange($event)" presentation="date" [(ngModel)]="dia"></ion-datetime>
   </center>
   <p></p>
-  <!-- List of Text Items -->
-  <ion-list>
-    <ion-item *ngFor="let tramo of tramos">
-      <ion-label (click)="seleccionar_tramo(tramo.horario_tramo_doctor_id)">{{tramo.hora_inicio}} -{{tramo.hora_fin}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  <button (click)=" agendar_cita()">Guadar</button>
+  <!-- lista de horarios-->
+
+    <ion-list>
+      <ion-item *ngFor="let tramo of tramos">
+        <ion-button expand="block" class="ion-margin contigo" (click)="seleccionar_tramo(tramo.horario_tramo_doctor_id)">
+          {{tramo.hora_inicio}} -{{tramo.hora_fin}} 
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  <ion-button expand="block" class="ion-margin contigo" (click)=" agendar_cita()">Guadar</ion-button>
 </ion-content>
