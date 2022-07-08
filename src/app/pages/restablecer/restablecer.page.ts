@@ -31,16 +31,21 @@ export class RestablecerPage implements OnInit {
       toast.present();
   }
 
-  sendMail() {
+  sendMail() 
+  {
     this.api.sendMail(this.email).subscribe((data: any) => {
       console.log(data)
-      if (data.resultado && data.resultado.status === 200) {
+      if (data.resultado === 'Contrasena enviada') 
+      {
         localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
         this.router.navigate(['login'], { replaceUrl: true });
         this.mostrarRespuesta("Contraseña enviada con exito");
-      } else {
+      } 
+
+      else {
         this.mostrarRespuesta("Correo electrónico no existe en la base de datos");
       }
+      
     })
   }
   navegar() {
