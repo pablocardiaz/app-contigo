@@ -14,7 +14,7 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title>Bienvenido</ion-title>
+    <ion-title>Bienvenido {{datos_padre.nombre}}</ion-title>
 
   </ion-toolbar>
   <ion-img src="./assets/images/banner.png"></ion-img>
@@ -32,6 +32,7 @@
       {{hijo.nombre}} {{hijo.apellido}}  <!-- {{hijo.rut}}  = rut => desglosar por el rut => consulta con la info-->
     </ion-label>
   </ion-item>
+
  
   
   <ion-button routerLink="/agenda" class="ion-margin-top contigo" expand="block">Reserva tu hora <ion-icon slot="start" name="calendar-number"></ion-icon></ion-button>
