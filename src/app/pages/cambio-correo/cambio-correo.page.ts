@@ -35,15 +35,18 @@ export class CambioCorreoPage implements OnInit {
         console.log(data)
         if (data.resultado  === 'CAMBIO_CORREO_OK') {
           localStorage.setItem('SESSION', JSON.stringify(data.resultado ));
-          this.mostrarRespuesta("Datos ingresados no son correctos"); // credenciales correctas
+          this.mostrarRespuesta("Correo actualizado");
           this.email ='';
           this.nuevoEmail ='';
+
         } else {
-          this.mostrarRespuesta("Datos ingresados correctamente");
+          this.mostrarRespuesta("Correo incorrecto");
           this.email ='';
           this.nuevoEmail ='';
         }
       })
     }
-  
+
   }
+  
+
