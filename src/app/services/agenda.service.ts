@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,4 +22,11 @@ export class AgendaService {
     return this.http.get(this.rutaBase, { params: { nombreFuncion: 'obtener_doctor_tramo', doctor_id, dia } });
   }
 
+  obtenerTramosFechaDoctores(fecha) {
+    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'obtener_doctor_fecha_tramo', fecha } });
+  }
+
+  agendarCita(body) {
+    return this.http.post(this.rutaBase, { nombreFuncion: 'agendar_cita', ...body });
+  }
 }

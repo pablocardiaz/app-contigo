@@ -31,7 +31,8 @@
     <ion-label>Medicos</ion-label>
     <ion-select (ionChange)="doctorChange($event)" [(ngModel)]="doctor" [interfaceOptions]="customPopoverOptions"
       interface="popover" placeholder="Seleccione">
-      <ion-select-option *ngFor="let doctor of doctores" [value]="doctor.doctor_id">{{doctor.nombre_completo}}
+      <ion-select-option *ngFor="let doctor of doctores" [value]="doctor.doctor_id">{{doctor.nombre}}
+        {{doctor.apellido}}
       </ion-select-option>
     </ion-select>
   </ion-item>
@@ -39,23 +40,24 @@
 
   <ion-item>
     <ion-label>Selecione el paciente</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione">
-      <ion-select-option value="brown">Sebastián Obando</ion-select-option>
-      <ion-select-option value="blonde">Manuel Ciro</ion-select-option>
-      <ion-select-option value="red">Deiby Rayo</ion-select-option>
+    <ion-select [interfaceOptions]="customPopoverOptions" [(ngModel)]="hijo" interface="popover"
+      placeholder="Seleccione">
+      <ion-select-option *ngFor="let hijo of hijos" [value]="hijo.rut">{{hijo.nombre}} {{hijo.apellido}}
+      </ion-select-option>
     </ion-select>
   </ion-item>
   <p></p>
 
-  <center>{{dia}}
+  <center>
     <ion-datetime (ionChange)="diaChange($event)" presentation="date" [(ngModel)]="dia"></ion-datetime>
   </center>
   <p></p>
   <!-- List of Text Items -->
   <ion-list>
     <ion-item *ngFor="let tramo of tramos">
-      <ion-label>{{tramo.hora_inicio}} -{{tramo.hora_fin}}</ion-label>
+      <ion-label (click)="seleccionar_tramo(tramo.horario_tramo_doctor_id)">{{tramo.hora_inicio}} -{{tramo.hora_fin}}
+      </ion-label>
     </ion-item>
   </ion-list>
-
+  <button (click)=" agendar_cita()">Guadar</button>
 </ion-content>
