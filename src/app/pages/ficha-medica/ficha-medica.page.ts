@@ -13,6 +13,7 @@ export class FichaMedicaPage implements OnInit {
   ruthijos =[];
   data =[];
   dataresult =[];
+  informacion= "";
 
   constructor(
     private hijosService: HijosService,
@@ -27,10 +28,13 @@ export class FichaMedicaPage implements OnInit {
         {
         this.data =JSON.parse(parametro.ruthijos);
         }
+        else {
+          this.informacion =("Credenciales incorrectas");
+
+        }
       })
     
     this.hijosService.fichaMedicaHijos(this.data).subscribe((response: any) => 
-      
     {
       console.log(response);
       this.dataresult = response.resultado;

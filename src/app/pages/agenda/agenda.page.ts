@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { AgendaService } from 'src/app/services/agenda.service';
 import { HijosService } from 'src/app/services/hijos.service';
 @Component({
@@ -17,10 +17,12 @@ export class AgendaPage implements OnInit {
   hijos = [];
   hijo = '';
   tramo_seleccionado = '';
+
   constructor(
     private hijosService: HijosService,
     public alertController: AlertController,
-    private agendaService: AgendaService
+    private agendaService: AgendaService,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -37,15 +39,12 @@ export class AgendaPage implements OnInit {
   //Especialidad medica
 
   tipoCitaChange(event) {
-    console.log(event);
 
     this.agendaService.obtenerDoctores(this.tipoCita).subscribe((doctores: any) => {
-      console.log(doctores);
       this.doctores = doctores.resultado;
     });
   }
   doctorChange(event) {
-    console.log(event);
     if (this.dia) {
       this.getTramos();
     }
@@ -57,15 +56,15 @@ export class AgendaPage implements OnInit {
   }
 
   getTramos() {
-    console.log('TRAMO')
+    console.log('Horario de Doctores')
     const fecha = new Date(this.dia)
     this.agendaService.obtenerTramosDoctores(this.doctor, fecha.getDay()).subscribe((tramos: any) => {
-      console.log(tramos);
       this.tramos = tramos.resultado;
 
+  
       const mes = fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1;
       this.agendaService.obtenerTramosFechaDoctores(`${fecha.getFullYear()}-${mes}-${fecha.getDate()}`).subscribe((citasPrevias: any) => {
-        console.log(citasPrevias);
+//        console.log(citasPrevias);
         this.tramos = this.tramos.filter((tramo) => {
           return !citasPrevias.resultado.find((cita) => {
             return +cita.horario_tramo_doctor_id === +tramo.horario_tramo_doctor_id
@@ -77,6 +76,15 @@ export class AgendaPage implements OnInit {
   seleccionar_tramo(tramo_seleccionado) {
     this.tramo_seleccionado = tramo_seleccionado;
   }
+
+  async mostrarRespuesta(mensaje) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 3000
+    });
+    toast.present();
+  }
+
   agendar_cita() {
     const fecha = new Date(this.dia)
     const mes = fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1;
@@ -85,6 +93,8 @@ export class AgendaPage implements OnInit {
       fecha: `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
       horario_tramo_doctor_id: this.tramo_seleccionado
     }).subscribe(() => {
+      this.mostrarRespuesta("Hora medica agendada con exito"); 
+
     })
   }
 }

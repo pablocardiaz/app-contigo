@@ -19,11 +19,11 @@ export class AgendaService {
   }
 
   obtenerTramosDoctores(doctor_id, dia) {
-    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'obtener_doctor_tramo', doctor_id, dia } });
+    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'GET_DOCTOR_TRAMOS', doctor_id, dia } });
   }
 
   obtenerTramosFechaDoctores(fecha) {
-    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'obtener_doctor_fecha_tramo', fecha } });
+    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'SP_OBTENER_DOCTOR_FECHA_TRAMO', fecha } });
   }
 
   agendarCita(body) {
