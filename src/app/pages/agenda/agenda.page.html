@@ -21,7 +21,7 @@
     <ion-label>Especialidad Medica</ion-label>
     <ion-select (ionChange)="tipoCitaChange($event)" [(ngModel)]="tipoCita" [interfaceOptions]="customPopoverOptions"
       interface="popover" placeholder="Seleccione">
-      <ion-select-option *ngFor="let tipoCita of tipoCitas" [value]="tipoCita.id">{{tipoCita.nombre}}
+      <ion-select-option required *ngFor="let tipoCita of tipoCitas" [value]="tipoCita.id">{{tipoCita.nombre}}
       </ion-select-option>
     </ion-select>
   </ion-item>
@@ -31,7 +31,7 @@
     <ion-label>Medicos</ion-label>
     <ion-select (ionChange)="doctorChange($event)" [(ngModel)]="doctor" [interfaceOptions]="customPopoverOptions"
       interface="popover" placeholder="Seleccione">
-      <ion-select-option *ngFor="let doctor of doctores" [value]="doctor.doctor_id">{{doctor.nombre}}
+      <ion-select-option required *ngFor="let doctor of doctores" [value]="doctor.doctor_id">{{doctor.nombre}}
         {{doctor.apellido}}
       </ion-select-option>
     </ion-select>
@@ -42,7 +42,7 @@
     <ion-label>Selecione el paciente</ion-label>
     <ion-select [interfaceOptions]="customPopoverOptions" [(ngModel)]="hijo" interface="popover"
       placeholder="Seleccione">
-      <ion-select-option *ngFor="let hijo of hijos" [value]="hijo.rut">{{hijo.nombre}} {{hijo.apellido}}
+      <ion-select-option required *ngFor="let hijo of hijos" [value]="hijo.rut">{{hijo.nombre}} {{hijo.apellido}}
       </ion-select-option>
     </ion-select>
   </ion-item>
@@ -63,5 +63,5 @@
     </ion-list>
   </center>
 
-  <ion-button expand="block" class="ion-margin contigo" (click)=" agendar_cita()">Guadar</ion-button>
+  <ion-button expand="block" class="ion-margin contigo" (click)=" agendar_cita()">Agendar hora medica</ion-button>
 </ion-content>
