@@ -31,4 +31,8 @@ export class AgendaService {
   agendarCita(body) {
     return this.http.post(this.rutaBase, { nombreFuncion: 'agendar_cita', ...body });
   }
+  obtenerCitasAgendadas(padre_rut_id) {
+    return this.http.get(this.rutaBase, { params: { nombreFuncion: 'SP_HORAS_MEDICAS_TOTALES_PACIENTES', padre_rut_id } });
+  }
+  
 }

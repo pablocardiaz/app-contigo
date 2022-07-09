@@ -1,0 +1,34 @@
+<ion-header>
+
+<ion-toolbar class="contigo">
+
+  <ion-buttons slot="start">
+    <ion-button color="light" routerLink="/home">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  
+    <ion-title >Horas agendadas</ion-title>
+   
+</ion-toolbar>
+<ion-img src="./assets/images/banner.png"></ion-img>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="ion-margin-top" *ngFor="let padre_id of padre_rutinfo"   >
+    <ion-icon name="today-outline" slot="start"></ion-icon>
+    <ion-label>
+      Paciente: {{padre_id.Nombre_Paciente}}
+      <p></p> 
+      Fecha de Cita: {{padre_id.fecha}} Hora: {{padre_id.Hora_Cita_Medica}} 
+       <p></p>
+       Doctor: {{padre_id.Doctor}} 
+       <p></p>
+       Especialidad: {{padre_id.Especialidad}}  <!-- {{hijo.rut}}  = rut => desglosar por el rut => consulta con la info-->
+    </ion-label>
+  </ion-item>
+<p></p>
+
+Si desea cancelar su Hora Medica, por favor contactarse con la asistente en linea al siguiente numero telefonico: +56999408114
+</ion-content>

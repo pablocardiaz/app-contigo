@@ -56,7 +56,11 @@ const routes: Routes = [
   {
     path: 'ficha-medica',
     loadChildren: () => import('./pages/ficha-medica/ficha-medica.module').then( m => m.FichaMedicaPageModule)
+  },  {
+    path: 'horas-agendadas',
+    loadChildren: () => import('./pages/horas-agendadas/horas-agendadas.module').then( m => m.HorasAgendadasPageModule)
   },
+
 
 ];
 
