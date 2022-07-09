@@ -53,15 +53,16 @@
   </center>
   <p></p>
   <!-- lista de horarios-->
-  <center>
     <ion-list>
       <ion-item *ngFor="let tramo of tramos">
-        <ion-button expand="block" class="ion-margin contigo" (click)="seleccionar_tramo(tramo.horario_tramo_doctor_id)">
+        <center>
+          <ion-button expand="block" class="ion-margin contigo" (click)="seleccionar_tramo(tramo.horario_tramo_doctor_id)">
           {{tramo.Hora_Inicio}} - {{tramo.Hora_Fin}} 
         </ion-button>
+      </center>
+
       </ion-item>
     </ion-list>
-  </center>
 
   <ion-button expand="block" class="ion-margin contigo" (click)=" agendar_cita()">Agendar hora medica</ion-button>
   
