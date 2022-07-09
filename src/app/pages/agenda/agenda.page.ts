@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { AgendaService } from 'src/app/services/agenda.service';
 import { HijosService } from 'src/app/services/hijos.service';
@@ -22,7 +23,8 @@ export class AgendaPage implements OnInit {
     private hijosService: HijosService,
     public alertController: AlertController,
     private agendaService: AgendaService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -94,6 +96,8 @@ export class AgendaPage implements OnInit {
       horario_tramo_doctor_id: this.tramo_seleccionado
     }).subscribe(() => {
       this.mostrarRespuesta("Hora medica agendada con exito"); 
+      this.router.navigate(['home'], { replaceUrl: true });
+
 
     })
   }
