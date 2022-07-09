@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class HijosService {
 
   rutaBase: string = 'https://desarrollos.cl/app-contigo/api/api.service.php';
+  //rutaBase: string = 'http://localhost/contigo/api/api.service.php';
+
 
   constructor(private http: HttpClient) { }
 
